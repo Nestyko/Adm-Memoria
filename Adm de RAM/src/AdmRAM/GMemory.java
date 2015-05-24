@@ -3,23 +3,27 @@ package AdmRAM;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import AdmRAM.graphicMemory.TiendaMemoria;
+
 public class GMemory extends JFrame{
 	
+	private TiendaMemoria panel1;
 	
-	public GMemory(ArrayList<Segment> memory){
-		VisualMem graphicMemory = new VisualMem();
-		
-		JFrame visualMemFrame = new JFrame("Visualizador de Memoria");
-		visualMemFrame.add(graphicMemory);
-		
-		visualMemFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		visualMemFrame.setVisible(true);
-		
+	/**
+	 * Ventana para visualizar la memoria RAM
+	 */
+	public GMemory(){
+		super("Tienda de Memoria");
+		this.setSize(350, 170);
+		this.setResizable(false);
+		 panel1 = new TiendaMemoria();
+		add(panel1);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	

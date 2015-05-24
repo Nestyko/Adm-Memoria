@@ -1,6 +1,8 @@
 package AdmRAM;
 import java.util.ArrayList;
 
+import javax.swing.SwingUtilities;
+
 import aux_classes.input_output.*;
 
 public class RAM{
@@ -15,6 +17,14 @@ public class RAM{
 	public static byte method = 0;
 
 	public static void main(String[] args){
+		
+		SwingUtilities.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				new GMemory();
+			}
+		});
 
 			byte opc;
 			do{
